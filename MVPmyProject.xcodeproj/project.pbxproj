@@ -13,6 +13,7 @@
 		F1C668A02769371600C1C42D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C6689E2769371600C1C42D /* Main.storyboard */; };
 		F1C668A22769371800C1C42D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1C668A12769371800C1C42D /* Assets.xcassets */; };
 		F1C668A52769371900C1C42D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1C668A32769371900C1C42D /* LaunchScreen.storyboard */; };
+		F1C668AE2769384500C1C42D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1C668AD2769384500C1C42D /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F1C668A12769371800C1C42D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1C668A42769371900C1C42D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1C668A62769371900C1C42D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1C668AD2769384500C1C42D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,32 @@
 		F1C668972769371600C1C42D /* MVPmyProject */ = {
 			isa = PBXGroup;
 			children = (
+				F1C668AF27693BE100C1C42D /* View */,
+				F1C668AC2769382B00C1C42D /* Model */,
 				F1C668982769371600C1C42D /* AppDelegate.swift */,
 				F1C6689A2769371600C1C42D /* SceneDelegate.swift */,
-				F1C6689C2769371600C1C42D /* ViewController.swift */,
 				F1C6689E2769371600C1C42D /* Main.storyboard */,
 				F1C668A12769371800C1C42D /* Assets.xcassets */,
 				F1C668A32769371900C1C42D /* LaunchScreen.storyboard */,
 				F1C668A62769371900C1C42D /* Info.plist */,
+				F1C6689C2769371600C1C42D /* ViewController.swift */,
+				F1C668AD2769384500C1C42D /* Model.swift */,
 			);
 			path = MVPmyProject;
+			sourceTree = "<group>";
+		};
+		F1C668AC2769382B00C1C42D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F1C668AF27693BE100C1C42D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +160,7 @@
 				F1C6689D2769371600C1C42D /* ViewController.swift in Sources */,
 				F1C668992769371600C1C42D /* AppDelegate.swift in Sources */,
 				F1C6689B2769371600C1C42D /* SceneDelegate.swift in Sources */,
+				F1C668AE2769384500C1C42D /* Model.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
