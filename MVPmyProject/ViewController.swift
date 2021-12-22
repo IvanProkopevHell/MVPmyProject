@@ -25,11 +25,6 @@ final class ViewController: UIViewController {
         lenghtTile.clearButtonMode = UITextField.ViewMode.whileEditing
         lenghtTile.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         self.view.addSubview(lenghtTile)
-        lenghtTile.translatesAutoresizingMaskIntoConstraints = false
-        let horizontalConstraintLenghtTile = NSLayoutConstraint (item: lenghtTile, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leadingMargin, multiplier: 1, constant: 0)
-        let verticalConstraintLenghtTile = NSLayoutConstraint (item: lenghtTile, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailingMargin, multiplier: 1, constant: 0)
-        NSLayoutConstraint.activate([horizontalConstraintLenghtTile, verticalConstraintLenghtTile
-                                    ])
         
         let widthTile = UITextField(frame: CGRect (x: 50, y: 200, width: 130, height: 52))
         widthTile.placeholder = "Ширина плитки"
@@ -75,7 +70,6 @@ final class ViewController: UIViewController {
         makeCalculation.setTitle("Сделать рассчеты", for: .normal)
         makeCalculation.layer.borderWidth = 1.0
         makeCalculation.layer.borderColor = UIColor.black.cgColor
-        makeCalculation.addTarget(self, action: #selector(makeCalculation), for: .touchUpInside)
         self.view.addSubview(makeCalculation)
     }
   
