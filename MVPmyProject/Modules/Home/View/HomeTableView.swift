@@ -8,10 +8,13 @@
 import UIKit
 
 class HomeTableView: UITableView {
-  
-    override init(frame: CGRect, style: UITableView.Style) {
+    
+    override init(
+        frame: CGRect, style: UITableView.Style
+    ) {
         super.init(frame: frame, style: style)
         dataSource = self
+        delegate = self
         
         register(UITableViewCell.self, forCellReuseIdentifier: "default")
     }
@@ -19,22 +22,38 @@ class HomeTableView: UITableView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
+    
 }
-    extension HomeTableView: UITableViewDataSource {
-        
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            2
-        }
-        
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "default", for: indexPath)
-            cell.textLabel?.text = "helio"
-            return cell
-        }
-        
+extension HomeTableView: UITableViewDataSource {
+    
+    func tableView(
+        _ tableView: UITableView,
+        numberOfRowsInSection section: Int
+    ) -> Int {
+        2
     }
+    
+    func tableView(
+        _ tableView: UITableView,
+        cellForRowAt indexPath: IndexPath
+    ) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(
+            withIdentifier: "default", for: indexPath
+        )
+        cell.textLabel?.text = "hello"
+        return cell
+    }
+    
+}
 
+extension HomeTableView: UITableViewDelegate {
+    func tableView(
+        _ tableView: UITableView,
+        didSelectRowAt indexPath: IndexPath
+    ) {
+        print("test")
+    }
+}
 
 
 

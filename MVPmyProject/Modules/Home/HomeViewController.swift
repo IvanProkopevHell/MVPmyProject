@@ -144,6 +144,24 @@ class HomeViewController: UIViewController {
         return label
     }()
     
+    override func loadView() {
+        let layout = UICollectionViewFlowLayout()
+        //  layout.itemSize = CGSize(width: 60, height: 60)
+        layout.minimumLineSpacing = 3
+        layout.minimumInteritemSpacing = 3
+        layout.scrollDirection = .horizontal
+        
+        self.view = HomeCollectionView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: UIScreen.main.bounds.width,
+                height: UIScreen.main.bounds.height
+            ),
+            collectionViewLayout: layout)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -151,7 +169,7 @@ class HomeViewController: UIViewController {
         configurator.configure(viewController: self)
         presenter.viewDidLoad()
         
-        setupLayout()
+   //   setupLayout()
     }
     
     private func setupLayout() {

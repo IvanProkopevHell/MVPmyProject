@@ -13,9 +13,9 @@ protocol HomePresenterInput: BasePresenterInput {
     var router: HomeRoutable { get }
     
     func onCalculateSquare(lengthOfTile: String,
-                       widthOfTile: String,
-                       heightOfWall: String,
-                       widthOfWall: String)
+                           widthOfTile: String,
+                           heightOfWall: String,
+                           widthOfWall: String)
     
     func viewDidLoad()
 }
@@ -61,6 +61,6 @@ extension HomePresenter: HomePresenterInput {
         let squareOfTile = lengthTile * widthTile
         let squareOfWall = heightWall * widthWall
         
-       output?.setNeedCountTiles(count: squareOfWall/squareOfTile)
+        output?.setNeedCountTiles(count: squareOfWall/squareOfTile)
     }
 }
