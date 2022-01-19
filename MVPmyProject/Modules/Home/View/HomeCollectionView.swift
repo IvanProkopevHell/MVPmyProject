@@ -10,9 +10,16 @@ import UIKit
 
 class HomeCollectionView: UICollectionView {
     
-    enum Cell: String {
+    enum ViewOfTileCell: String {
         case standart
+        case custom
     }
+    
+    private let typeOfTiles = [
+        TileModelCell(type: .custom, backgroundColor: .blue),
+        TileModelCell(type: .custom, backgroundColor: .blue),
+        TileModelCell(type: .standart, backgroundColor: .darkGray)
+    ]
     
     override init(
         frame: CGRect,
@@ -24,7 +31,12 @@ class HomeCollectionView: UICollectionView {
         
         register(
             UICollectionViewCell.self,
-            forCellWithReuseIdentifier: Cell.standart.rawValue
+            forCellWithReuseIdentifier: ViewOfTileCell.standart.rawValue
+        )
+        
+        register(
+            CustomCollectionCell.self,
+            forCellWithReuseIdentifier: ViewOfTileCell.custom.rawValue
         )
     }
     
@@ -48,26 +60,44 @@ extension HomeCollectionView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-
-
 extension HomeCollectionView: UICollectionViewDataSource {
     func collectionView(
         _ collectionView: UICollectionView,
         numberOfItemsInSection section: Int
     ) -> Int {
-        200
+        typeOfTiles.count
     }
     
     func collectionView(
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(
-            withReuseIdentifier: Cell.standart.rawValue,
-            for: indexPath
-        )
-        cell.backgroundColor = .blue
-        return cell
+        
+        let itemTile = typeOfTiles[indexPath.item]
+        
+        switch itemTile.type {
+            
+        case .standart:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ViewOfTileCell.standart.rawValue,
+                for: indexPath
+            )
+            cell.backgroundColor = itemTile.backgroundColor
+            return cell
+            
+        case .custom:
+            let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: ViewOfTileCell.custom.rawValue,
+                for: indexPath
+            ) as? CustomCollectionCell
+            cell?.area = 10
+            //cell?.backgroundColor = item.backgroundColor
+            cell?.configure(model: itemTile)
+            return cell ?? UICollectionViewCell()
+            
+        }
+        
+        
     }
     
     

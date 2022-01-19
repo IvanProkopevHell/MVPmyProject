@@ -146,9 +146,9 @@ class HomeViewController: UIViewController {
     
     override func loadView() {
         let layout = UICollectionViewFlowLayout()
-        //  layout.itemSize = CGSize(width: 60, height: 60)
-        layout.minimumLineSpacing = 3
-        layout.minimumInteritemSpacing = 3
+        layout.itemSize = CGSize(width: 60, height: 20)
+        layout.minimumLineSpacing = 1
+        layout.minimumInteritemSpacing = 1
         layout.scrollDirection = .horizontal
         
         self.view = HomeCollectionView(
@@ -169,7 +169,7 @@ class HomeViewController: UIViewController {
         configurator.configure(viewController: self)
         presenter.viewDidLoad()
         
-   //   setupLayout()
+        //   setupLayout()
     }
     
     private func setupLayout() {
